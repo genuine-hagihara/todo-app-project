@@ -32,8 +32,8 @@
 
 - [ ] T005 [P] [US1] Create custom hook `use-todos.ts` for managing tasks state (add, toggle, edit, delete functions) in `hooks/use-todos.ts`
 - [ ] T006 [US1] Build responsive main layout wrapper in `app/page.tsx`
-- [ ] T007 [P] [US1] Create form component `task-input` for adding new tasks in `components/feature/task-input.tsx`
-- [ ] T008 [P] [US1] Create listing component `task-item` (with checkbox, text, edit mode, delete button) in `components/feature/task-item.tsx`
+- [ ] T007 [P] [US1] Create form component `task-input` for adding new tasks (must validate and prevent empty/whitespace-only submissions) in `components/feature/task-input.tsx`
+- [ ] T008 [P] [US1] Create listing component `task-item` (with checkbox, text, edit mode, delete button, and proper text-wrapping/truncation for long strings) in `components/feature/task-item.tsx`
 - [ ] T009 [US1] Integrate `use-todos`, `task-input`, and `task-item` into the main view in `app/page.tsx`
 - [ ] T010 [US1] Implement deletion confirmation using Undo Toast from shadcn/ui in `components/feature/task-item.tsx`
 
@@ -56,7 +56,7 @@
 - [ ] T014 [US3] Connect `use-todos.ts` state changes to trigger `lib/storage.ts` writes on every update in `hooks/use-todos.ts`
 - [ ] T015 [US3] Add initialization logic to `use-todos.ts` to load from `localStorage` on component mount in `hooks/use-todos.ts`
 - [ ] T016 [US3] Implement and verify quota exceed (storage full) error handling gracefully via Toasts in `hooks/use-todos.ts`
-- [ ] T016b [US3] Configure next-pwa or next-offline to cache static assets and serve app in complete offline environment
+- [ ] T016b [US3] Configure @serwist/next (or next-pwa) to cache static assets and serve app in complete offline environment
 
 ## Phase 5: Testing & Polish (a11y)
 
