@@ -1,34 +1,34 @@
 # Specification Quality Checklist: 個人用 ToDo アプリ
 
-**Purpose**: Validate specification completeness and quality before proceeding to planning
-**Created**: 2026-02-26
-**Feature**: [specs/001-todo-app/spec.md](file:///wsl.localhost/Ubuntu/home/hagihara/speckitTest1/specs/001-todo-app/spec.md)
+**目的**: 計画段階へ進む前に仕様書の完全性と品質を検証する
+**作成日**: 2026-02-26
+**フィーチャー**: [specs/001-todo-app/spec.md](file:///wsl.localhost/Ubuntu/home/hagihara/speckitTest1/specs/001-todo-app/spec.md)
 
-## Content Quality
+## コンテンツの品質
 
-- [x] No implementation details (languages, frameworks, APIs)
-- [x] Focused on user value and business needs
-- [x] Written for non-technical stakeholders
-- [x] All mandatory sections completed
+- [x] 実装詳細（言語・フレームワーク・API等）が含まれていない
+- [x] ユーザー価値とビジネスニーズに焦点を当てている
+- [x] 非技術者のステークホルダー向けに記載されている
+- [x] 必須セクションがすべて記入されている
 
-## Requirement Completeness
+## 要件の完全性
 
-- [x] No [NEEDS CLARIFICATION] markers remain
-- [x] Requirements are testable and unambiguous
-- [x] Success criteria are measurable
-- [x] Success criteria are technology-agnostic (no implementation details)
-- [x] All acceptance scenarios are defined
-- [x] Edge cases are identified
-- [x] Scope is clearly bounded
-- [x] Dependencies and assumptions identified
+- [x] `[NEEDS CLARIFICATION]` マーカーが残っていない
+- [x] 要件がテスト可能かつ明確である
+- [x] 成功基準が測定可能である
+- [x] 成功基準が技術中立的である（実装詳細を含まない）
+- [x] 全ての受入シナリオが定義されている
+- [x] エッジケースが特定されている
+- [x] スコープが明確に定義されている
+- [x] 依存関係と前提条件が特定されている
 
-## Feature Readiness
+## フィーチャーの展開準備
 
-- [x] All functional requirements have clear acceptance criteria
-- [x] User scenarios cover primary flows
-- [x] Feature meets measurable outcomes defined in Success Criteria
-- [x] No implementation details leak into specification
+- [x] 全機能要件に明確な受入基準がある
+- [x] ユーザーシナリオが主要フローをカバーしている
+- [x] 成功基準に定義された測定可能な達成目標をフィーチャーが満たしている
+- [x] 仕様への実装詳細の混入がない
 
-## Notes
+## 備考
 
-- Items marked incomplete require spec updates before `/speckit.clarify` or `/speckit.plan`
+- 未完了の項目がある場合は、`/speckit.clarify` または `/speckit.plan` 実行前に仕様書の更新が必要です。

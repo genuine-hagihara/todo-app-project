@@ -1,13 +1,13 @@
 # Quickstart: 個人用 ToDo アプリ
 
-**Feature**: `001-todo-app`
+**フィーチャー**: `001-todo-app`
 
 このToDoアプリの開発・実行手順です。
 
-## 必須環境 (Prerequisites)
+## 必須環境
 
-- **Node.js**: v18 以降推奨 (App Router対応のため)
-- **パッケージマネージャー**: `pnpm` (コマンド例は全てpnpmで記載)
+- **Node.js**: v18 以降推奨（App Router対応のため）
+- **パッケージマネージャー**: `pnpm`（コマンド例は全てpnpmで記載）
 
 ## セットアップ手順
 
@@ -23,14 +23,14 @@
 
    起動後、ブラウザで `http://localhost:3000` にアクセスしてください。
 
-## テストの実行 (要件に従い追加)
+## テストの実行
 
 - ユニットテスト (`use-todos`, `storage` 等のロジックテスト):
   ```bash
   pnpm test:unit
   ```
 
-- E2Eテスト (ブラウザ上での操作検証):
+- E2Eテスト（ブラウザ上での操作検証）:
   ```bash
   pnpm test:e2e
   ```

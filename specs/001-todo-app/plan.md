@@ -3,48 +3,48 @@
 **Branch**: `001-todo-app` | **Date**: 2026-02-26 | **Spec**: [specs/001-todo-app/spec.md](spec.md)
 **Input**: ユーザーからの詳細な実装計画要望（Next.js App Router, Tailwind, Shadcn/ui, ローカル永続化, a11y, 段階的フェーズ）
 
-## Summary
+## 概要
 
 個人が日常のタスクを素早く管理するためのToDoアプリ。Next.js (App Router), Tailwind CSS, shadcn/ui を用いて構築し、オフライン環境下でも動作する完全クライアントサイド（モバイルファースト）な実装を行う。データ永続化は `localStorage` を使用し、a11y（キーボード操作・ラベル・フォーカス可視化）を満たしながら要求されたUI方針（白基調、余白広め）を実現する。
 
-## Technical Context
+## 技術コンテキスト
 
-**Language/Version**: TypeScript / Node.js (Latest LTS)
-**Primary Dependencies**: Next.js (App Router), React, Tailwind CSS, shadcn/ui, lucide-react, pnpm
-**Storage**: `localStorage` (クライアントサイドでの永続化)
-**Target Platform**: Webブラウザ (モバイルファースト・レスポンシブデザイン)
-**Project Type**: Single web application (Frontend only for logic/storage)
-**Performance Goals**: ロード1秒未満、操作時のUI反映0.15秒以内
-**Constraints**: オフライン完全動作、データ破損時のクラッシュ回避機構
-**Scale/Scope**: 最大1000件程度のタスク数
+**言語/バージョン**: TypeScript / Node.js（Latest LTS）
+**主要依存ライブラリ**: Next.js (App Router), React, Tailwind CSS, shadcn/ui, lucide-react, pnpm
+**ストレージ**: `localStorage`（クライアントサイドでの永続化）
+**ターゲットプラットフォーム**: Webブラウザ（モバイルファースト・レスポンシブデザイン）
+**プロジェクト種別**: 単一Webアプリケーション（ロジック・ストレージはフロントエンドのみ）
+**パフォーマンス目標**: ロード1秒未満、操作時のUI反映0.15秒以内
+**制約**: オフライン完全動作、データ破損時のクラッシュ回避機構
+**規模/スコープ**: 最大1000件程度のタスク数
 
-## Constitution Check
+## 規約チェック
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+*ゲート: Phase 0 調査前に必ずパスすること。Phase 1 設計後に再確認すること。*
 
 - [x] **I. Clean Code**: コンポーネント指向に基づき、単一責任の原則に従う。
 - [x] **II. Simple UX**: モバイルファーストで1〜2アクションで主要操作を完了可能にする。
 - [x] **III. Responsive Design**: Tailwind によるモバイルファーストなレイアウト・余白設計。
 - [x] **IV. No Testing**: 規約通り、単体テスト・E2Eテストの実装は行わず、手動での動作確認と機能実装に注力する。
 
-## Project Structure
+## プロジェクト構成
 
-### Documentation (this feature)
+### ドキュメント（本フィーチャー）
 
 ```text
 specs/001-todo-app/
 ├── spec.md              # 仕様書
-├── plan.md              # This file
+├── plan.md              # 本ファイル
 ├── data-model.md        # データ構造と永続化方針
 ├── research.md          # 調査事項（実装方針）
 ├── quickstart.md        # 起動手順
 └── tasks.md             # (後続) 実装タスク一覧
 ```
 
-### Source Code (repository root)
+### ソースコード（リポジトリルート）
 
 ```text
-# Web application (Next.js App Router)
+# Webアプリケーション（Next.js App Router）
 src/
 ├── app/
 │   ├── layout.tsx       # 全体レイアウト（フォント、a11y初期設定）
@@ -60,7 +60,7 @@ src/
     └── index.ts         # データモデル定義 (Task, FilterStatus)
 ```
 
-**Structure Decision**: Next.js App Routerの標準的な単一プロジェクト構成。ロジックとUIを分離するため、状態管理は `hooks/` に、ストレージI/Oは `lib/` に配置する。
+**構成方針**: Next.js App Routerの標準的な単一プロジェクト構成。ロジックとUIを分離するため、状態管理は `hooks/` に、ストレージI/Oは `lib/` に配置する。
 
 ---
 
@@ -84,7 +84,7 @@ src/
   * **Done条件**: フックを使い、コンソール上で全 CRUD 操作とフィルタリングが正しく処理・保存される。
   * **該当AC**: FR-006, FR-008
 
-### Phase 2: コアUIとアクセシビリティ (Core UI & a11y)
+### Phase 2: コアUIとアクセシビリティ
 **目的**: 仕様に基づいたUIの構築、モバイルファーストかつa11yを満たす画面を作る。
 
 * **Step 2.1: モバイルファーストレイアウト**
@@ -100,7 +100,7 @@ src/
   * **Done条件**: トグルによる打ち消し線の即時反映、フィルタ切替による表示タスクの正確な絞り込み。
   * **該当AC**: User Story 1 (AC2), User Story 2 (AC1, 2, 3), FR-002, FR-005
 
-### Phase 3: 拡張機能と堅牢性 (Extension & Robustness)
+### Phase 3: 拡張機能と堅牢性
 **目的**: 編集機能、削除時の意図的UI、テストの実装で完成度を高める。
 
 * **Step 3.1: タスクの編集**
