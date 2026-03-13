@@ -1,0 +1,33 @@
+description = "Extract and implement ONLY the next incomplete task from tasks.md."
+
+prompt = """
+---
+description: Extract and implement ONLY the next incomplete task from tasks.md to save context window.
+---
+
+## User Input
+```text
+$ARGUMENTS
+```
+You **MUST** consider the user input before proceeding (if not empty).
+
+## Outline
+
+1. **Context Loading**: 
+   - Read `tasks.md`. 
+   - Identify the **FIRST incomplete task** (marked as `- [ ]`). If it has parallel markers `[P]`, identify the entire parallel group.
+   - Read ONLY the specific files required for this specific task (from `plan.md`, `data-model.md`, or existing codebase). Do NOT load the entire project context.
+
+2. **Execute Implementation**:
+   - Follow TDD approach: Execute test tasks before their corresponding implementation tasks if applicable.
+   - Write or update the code for the identified task only.
+   - Provide clear error messages with context for debugging if anything fails.
+
+3. **Progress Tracking**:
+   - **IMPORTANT**: Upon successful implementation of the task, update `tasks.md` and mark the completed task off as `- [x]`.
+
+4. **Completion Report**:
+   - Summarize what was implemented in this step.
+   - If there are remaining incomplete tasks in `tasks.md`, tell the user to run `/speckit.implement-next` again.
+   - If all tasks in `tasks.md` are marked as `[x]`, tell the user to run `/speckit.implement-verify` for final validation.
+"""
